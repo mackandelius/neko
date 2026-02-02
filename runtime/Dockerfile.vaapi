@@ -22,8 +22,8 @@ RUN set -eux; \
         pulseaudio dbus-x11 xserver-xorg-video-dummy \
         libcairo2 libxcb1 libxrandr2 libxv1 libopus0 libvpx6 \
         #
-        # intel driver + vaapi
-        intel-media-va-driver-non-free libva2 vainfo \
+        # intel driver + amd driver + vaapi
+        intel-media-va-driver-non-free mesa-va-drivers libva2 vainfo \
         #
         # needed for profile upload preStop hook
         zip curl \
@@ -111,6 +111,11 @@ ENV NEKO_PLUGINS_ENABLED=true
 ENV NEKO_PLUGINS_DIR=/etc/neko/plugins/
 ENV NEKO_HWENC=VAAPI
 ENV RENDER_GID=
+
+# 2. Environmental tweaks for hardware stability
+# We don't hardcode LIBVA_DRIVER_NAME here so the system can auto-detect
+# Intel (iHD) vs AMD (radeonsi) vs Generic.
+ENV NVC_PROMPT_RELEASE=1
 
 #
 # add healthcheck
