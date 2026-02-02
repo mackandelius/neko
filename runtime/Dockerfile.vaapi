@@ -23,7 +23,8 @@ RUN set -eux; \
         libcairo2 libxcb1 libxrandr2 libxv1 libopus0 libvpx6 \
         #
         # intel driver + amd driver + vaapi
-        intel-media-va-driver-non-free mesa-va-drivers libva2 vainfo \
+        #intel-media-va-driver-non-free mesa-va-drivers libva2 vainfo \
+        mesa-va-drivers libva2 vainfo \
         #
         # needed for profile upload preStop hook
         zip curl \
