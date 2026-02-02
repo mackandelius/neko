@@ -1,4 +1,4 @@
-name: Build and Push to GHCR for Intel
+name: Build and Push to GHCR for VA-API
 
 on:
   push:
@@ -10,9 +10,9 @@ jobs:
     name: Base Image
     uses: ./.github/workflows/image_base.yml
     with:
-      flavor: intel
+      flavor: vaapi
       platforms: linux/amd64
-      dockerfile: Dockerfile.intel
+      dockerfile: Dockerfile.vaapi
     secrets: inherit
 
   build-app:
@@ -41,7 +41,7 @@ jobs:
           - name: kde
     with:
       name: ${{ matrix.name }}
-      flavor: intel
+      flavor: vaapi
       platforms: ${{ matrix.platforms }}
       dockerfile: ${{ matrix.dockerfile }}
     secrets: inherit
