@@ -23,7 +23,8 @@ RUN set -eux; \
         libcairo2 libxcb1 libxrandr2 libxv1 libopus0 libvpx6 \
         #
         # intel driver + amd driver + vaapi
-        intel-media-va-driver-non-free mesa-va-drivers libva2 vainfo \
+        #intel-media-va-driver-non-free 
+        mesa-va-drivers libva2 vainfo libva-drm2 \
         #
         # needed for profile upload preStop hook
         zip curl \
@@ -115,7 +116,7 @@ ENV RENDER_GID=
 # 2. Environmental tweaks for hardware stability
 # We don't hardcode LIBVA_DRIVER_NAME here so the system can auto-detect
 # Intel (iHD) vs AMD (radeonsi) vs Generic.
-ENV NVC_PROMPT_RELEASE=1
+#ENV NVC_PROMPT_RELEASE=1
 
 #
 # add healthcheck

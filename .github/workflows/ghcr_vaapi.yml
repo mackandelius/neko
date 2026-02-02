@@ -28,18 +28,18 @@ jobs:
           - name: firefox
           # Temporarily disabled due to Cloudflare blocked download link
           #- name: waterfox
-          - name: chromium
-          - name: google-chrome
-          - name: ungoogled-chromium
-          - name: microsoft-edge
-          - name: brave
-          - name: vivaldi
-          - name: opera
-          - name: tor-browser
-          - name: remmina
-          - name: vlc
-          - name: xfce
-          - name: kde
+         # - name: chromium
+         # - name: google-chrome
+         # - name: ungoogled-chromium
+         # - name: microsoft-edge
+         # - name: brave
+         # - name: vivaldi
+         # - name: opera
+         # - name: tor-browser
+         # - name: remmina
+         # - name: vlc
+         # - name: xfce
+         # - name: kde
     with:
       name: ${{ matrix.name }}
       flavor: vaapi
